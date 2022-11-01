@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  /* fonts [DM Sans - 400, 700] */
+  --font-dm-sans: "DM Sans", sans-serif;
+  /* Colors */
+  --soft-red: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 34%, 60%);
+  --dark-brown: hsl(25, 47%, 15%);
+  --medium-brown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --very-pale-orange: hsl(33, 100%, 98%);
+}
+
+/* Global Styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+img,
+span {
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-dm-sans);
+  background-color: var(--cream);
+  font-size: 18px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Component container */
+
+.grid-container {
+  display: grid;
+  gap: 1rem;
+  width: 90vw;
+  max-width: 400px;
+}
+
+/* Component header */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--soft-red);
+  color: var(--very-pale-orange);
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+header .balance {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Component content */
+
+.content {
+  background-color: var(--very-pale-orange);
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+/* Charts container */
+
+.content .charts {
+  display: flex;
+  justify-content: space-around;
+  min-height: 100px;
+  margin: 3rem 0 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--medium-brown);
+  margin-bottom: 1rem;
+}
+
+/* single chart container */
+
+.content .charts .chart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Chart bars and amount */
+
+.content .charts .chart .amount-chart {
+  background-color: var(--soft-red);
+  cursor: pointer;
+  width: 70%;
+  height: 0px;
+  border-radius: 0.2rem;
+  transition: 0.25s;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.content .charts .chart .amount-chart .amount {
+  color: var(--very-pale-orange);
+  background-color: var(--dark-brown);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem;
+  border-radius: 0.3rem;
+  position: absolute;
+  top: -2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.25s;
+}
+.content .charts .chart .amount-chart:hover {
+  background-color: #76b5bc8a;
+}
+.content .charts .chart .amount-chart:hover .amount {
+  visibility: visible;
+  opacity: 1;
+}
+.content .charts .chart .day {
+  color: var(--medium-brown);
+  font-size: 1rem;
+}
+
+/* Component Footer (total expenses) */
+
+.total-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--medium-brown);
+  font-size: 1rem;
+}
+
+.total-wrapper .total-amount {
+  font-size: 1.8rem;
+  color: black;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+.total-wrapper .total-percent {
+  font-size: 1.2rem;
+  color: black;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  text-align: right;
+}
